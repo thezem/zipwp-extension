@@ -1,6 +1,6 @@
 {
-	"manifest_version": 2,
-	"name": "ZipWP",
+	"manifest_version": 3,
+	"name": "ZipWP Extension",
 	"version": "1.0",
 	"description": "A Chrome extension for ZipWP",
 	"icons": {
@@ -8,11 +8,19 @@
 		"48": "zipwp-logo-dark.png",
 		"128": "zipwp-logo-dark.png"
 	},
-	"browser_action": {
-		"default_icon": "zipwp-logo-dark.png",
-		"default_popup": "popup.html"
+	"action": {
+		"default_icon": {
+			"16": "zipwp-logo-dark.png",
+			"48": "zipwp-logo-dark.png",
+			"128": "zipwp-logo-dark.png"
+		},
+		"default_popup": "popup.html",
+		"default_title": "ZipWP Extension"
 	},
 	"permissions": [
 		"activeTab"
+	],
+	"host_permissions": [
+		"<all_urls>"
 	]
 }
