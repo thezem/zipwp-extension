@@ -17,6 +17,6 @@
     "default_popup": "popup.html",
     "default_title": "ZipWP Extension"
   },
-  "permissions": ["activeTab"],
+  "permissions": ["activeTab", "management", "<all_urls>"],
   "host_permissions": ["<all_urls>"]
 }
