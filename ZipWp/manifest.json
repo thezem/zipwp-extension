@@ -1,26 +1,25 @@
 {
-	"manifest_version": 3,
-	"name": "ZipWP Extension",
-	"version": "1.0",
-	"description": "A Chrome extension for ZipWP",
-	"icons": {
-		"16": "/images/logo-small.png",
-		"48": "/images/logo-small.png",
-		"128": "/images/logo-small.png"
-	},
-	"action": {
-		"default_icon": {
-			"16": "/images/logo-small.png",
-			"48": "/images/logo-small.png",
-			"128": "/images/logo-small.png"
-		},
-		"default_popup": "popup.html",
-		"default_title": "ZipWP Extension"
-	},
-	"permissions": [
-		"activeTab"
-	],
-	"host_permissions": [
-		"<all_urls>"
-	]
+  "manifest_version": 3,
+  "name": "ZipWP Extension",
+  "version": "1.0",
+  "description": "A Chrome extension for ZipWP",
+  "icons": {
+    "16": "/images/logo-small.png",
+    "48": "/images/logo-small.png",
+    "128": "/images/logo-small.png"
+  },
+  "action": {
+    "default_icon": {
+      "16": "/images/logo-small.png",
+      "48": "/images/logo-small.png",
+      "128": "/images/logo-small.png"
+    },
+    "default_popup": "popup.html",
+    "default_title": "ZipWP Extension"
+  },
+  "permissions": ["activeTab", "cookies", "storage"],
+  "host_permissions": ["http://zipwp.com/*", "https://zipwp.com/*"],
+  "background": {
+    "service_worker": "background.js"
+  }
 }
