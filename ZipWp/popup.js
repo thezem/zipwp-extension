@@ -1,12 +1,12 @@
-document.addEventListener("DOMContentLoaded", function () {
-	const createNewBtn = document.getElementById("create-new-btn");
-	const createNewWithAdvancedBtn = document.getElementById("create-new-with-advanced-btn");
+document.addEventListener('DOMContentLoaded', function () {
+  const createBlankSiteBtn = document.getElementById('create-new-blank-site');
+  const createAiSiteBtn = document.getElementById('create-new-ai-site');
 
-	createNewBtn.addEventListener("click", function () {
-		chrome.tabs.create({ url: "https://try.new/" });
-	});
+  createAiSiteBtn.addEventListener('click', function () {
+    chrome.tabs.create({ url: 'https://app.zipwp.com/create-complete-site/type?source=zipwp&medium=zipwp-browser-extension' });
+  });
 
-	createNewWithAdvancedBtn.addEventListener("click", function () {
-		chrome.tabs.create({ url: "https://app.zipwp.com/create-complete-site/type?source=zipwp&medium=firstfold" });
-	});
+  createBlankSiteBtn.addEventListener('click', function () {
+    chrome.tabs.create({ url: 'https://try.new/' });
+  });
 });

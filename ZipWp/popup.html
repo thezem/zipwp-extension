@@ -3,74 +3,159 @@
   <head>
     <title>ZipWP Extension</title>
     <style>
-		body {
-            font-family: Arial, sans-serif;
-            padding: 20px;
-            margin: 0;
-            background-color: #f9f9f9;
-            width: 300px;
-            text-align: center;
-			background-image: linear-gradient(to right, #ea1171, #ea1171), url('/images/her-section-bg-gradient.png');
-        }
-        .container-info {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-			background-color: white;
-			padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-        .button-container {
-            display: flex;
-			flex-direction: column;
-			align-items: center;
-            gap: 10px;
-            width: 100%;
-            justify-content: center;
-        }
-        button {
-            width: 90%;
-            padding: 10px;
-            font-size: 16px;
-            border-radius: 5px;
-            cursor: pointer;
-            border: none;
-        }
-        button#create-new-btn {
-			background-color: #ffffff;
-            color: #000000;
-			border-style: solid;
-			border-color: #b809a7;
-			border-top-width: 1px;
-			border-bottom-width: 1px;
-			border-left-width: 1px;
-			border-right-width: 1px;
-        }
-        button#create-new-with-advanced-btn {
-            background: linear-gradient(90deg, rgb(184, 9, 167) 0%, rgb(233, 11, 118) 48%, rgb(252, 133, 54) 100%);
-            color: #ffffff;
-        }
-        button:hover {
-            opacity: 0.9;
-        }
-		h1 {
-            font-size: 18px;
-        }
-	</style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        background-color: white;
+        width: 360px;
+        text-align: center;
+        border-radius: 12px;
+      }
+      .container-info {
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        background-color: white;
+        border-radius: 8px;
+        gap: 24px;
+      }
+      .container-welcome {
+        color: #020617;
+        font-size: 20px;
+        font-weight: 700;
+        margin-top: 0px;
+      }
+      .button-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        width: 100%;
+        justify-content: center;
+      }
+
+      .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 16px;
+        background-color: white;
+        border-bottom: 1px solid #e9ecef;
+      }
+      .header-text {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        color: #64748b;
+        text-decoration: none;
+        font-size: 12px;
+        font-weight: 500;
+      }
+
+      #create-new-ai-site {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 10px 16px;
+        gap: 8px;
+        width: 320px;
+        height: 44px;
+        background: #3d4592;
+        border-radius: 6px;
+        color: white;
+        font-size: 14px;
+        font-weight: 500;
+        cursor: pointer;
+        border: none;
+      }
+      #create-new-blank-site {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 10px 16px;
+        gap: 8px;
+        width: 320px;
+        height: 44px;
+        background: #f8fafc;
+        border-radius: 6px;
+        color: #020617;
+        font-size: 14px;
+        font-weight: 500;
+        border: 1px solid #e2e8f0;
+        cursor: pointer;
+      }
+    </style>
   </head>
   <body>
-	<div>
-		<div class="container-info">
-			<img alt="Logo" width="32" height="32" id="logo" class="rounded-sm" referrerpolicy="no-referrer" src="/images/logo-small.svg">
-			<h1>Create a new WordPress site</h1>
-			<div class="button-container">
-				<button id="create-new-btn">Default Settings</button>
-				<button id="create-new-with-advanced-btn">Advanced Options</button>
-			</div>
-		</div>
+    <div class="header">
+      <img alt="Logo" width="75" height="24" id="logo" class="rounded-sm" referrerpolicy="no-referrer" src="/images/logo.png" />
+      <a href="https://app.zipwp.com/" target="_blank" class="header-text">
+        Visit App
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M9 6.5V9.5C9 9.76522 8.89464 10.0196 8.70711 10.2071C8.51957 10.3946 8.26522 10.5 8 10.5H2.5C2.23478 10.5 1.98043 10.3946 1.79289 10.2071C1.60536 10.0196 1.5 9.76522 1.5 9.5V4C1.5 3.73478 1.60536 3.48043 1.79289 3.29289C1.98043 3.10536 2.23478 3 2.5 3H5.5"
+            stroke="#64748B"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path d="M7.5 1.5H10.5V4.5" stroke="#64748B" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M5 7L10.5 1.5" stroke="#64748B" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </a>
     </div>
-	<script src="popup.js"></script>
+    <div>
+      <div class="container-info">
+        <h1 class="container-welcome">Welcome to ZipWP</h1>
+        <div class="button-container">
+          <button id="create-new-ai-site">
+            <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M3.49996 11.0002C2.49996 11.8402 2.16663 14.3335 2.16663 14.3335C2.16663 14.3335 4.65996 14.0002 5.49996 13.0002C5.97329 12.4402 5.96663 11.5802 5.43996 11.0602C5.18083 10.8129 4.83949 10.67 4.48144 10.6589C4.1234 10.6478 3.77388 10.7694 3.49996 11.0002Z"
+                stroke="#F8FAFC"
+                stroke-width="1.25"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M8.5 9.99984L6.5 7.99984C6.85476 7.07946 7.30147 6.19722 7.83333 5.36651C8.61012 4.1245 9.69175 3.10187 10.9753 2.3959C12.2589 1.68993 13.7018 1.32409 15.1667 1.33317C15.1667 3.14651 14.6467 6.33317 11.1667 8.66651C10.3246 9.19899 9.43123 9.64567 8.5 9.99984Z"
+                stroke="#F8FAFC"
+                stroke-width="1.25"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M6.49996 8.00034H3.16663C3.16663 8.00034 3.53329 5.98034 4.49996 5.33367C5.57996 4.61367 7.83329 5.33367 7.83329 5.33367"
+                stroke="#F8FAFC"
+                stroke-width="1.25"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M8.5 10.0003V13.3337C8.5 13.3337 10.52 12.967 11.1667 12.0003C11.8867 10.9203 11.1667 8.66699 11.1667 8.66699"
+                stroke="#F8FAFC"
+                stroke-width="1.25"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+
+            Build A Complete Site in Seconds with AI
+          </button>
+          <button id="create-new-blank-site">
+            <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M2.40625 5.3125C2.03125 6.125 1.84375 7.0625 1.84375 8C1.84375 10.6562 3.375 12.9062 5.59375 14L2.40625 5.3125ZM12.9688 7.6875C12.9688 8.25 12.75 8.90625 12.4688 9.8125L11.8125 12.0312L9.40625 4.90625C9.8125 4.875 10.1562 4.84375 10.1562 4.84375C10.5312 4.78125 10.4688 4.25 10.125 4.28125C10.125 4.28125 9.03125 4.375 8.34375 4.375C7.6875 4.375 6.59375 4.28125 6.59375 4.28125C6.25 4.25 6.1875 4.8125 6.5625 4.84375C6.5625 4.84375 6.90625 4.875 7.25 4.90625L8.28125 7.71875L6.84375 12.0938L4.40625 4.90625C4.8125 4.875 5.1875 4.84375 5.1875 4.84375C5.53125 4.78125 5.5 4.25 5.125 4.28125C5.125 4.28125 4.0625 4.375 3.34375 4.375C3.21875 4.375 3.09375 4.375 2.9375 4.375C4.125 2.5625 6.15625 1.375 8.5 1.375C10.2188 1.375 11.7812 2.03125 12.9688 3.125C12.9375 3.09375 12.9062 3.09375 12.875 3.09375C12.25 3.09375 11.7812 3.6875 11.7812 4.28125C11.7812 4.84375 12.0938 5.3125 12.4375 5.84375C12.6875 6.28125 12.9688 6.84375 12.9688 7.6875ZM8.59375 8.59375L10.6562 14.1875C10.6562 14.2188 10.6875 14.25 10.6875 14.2812C10 14.5312 9.25 14.6562 8.5 14.6562C7.84375 14.6562 7.21875 14.5625 6.59375 14.4062L8.59375 8.59375ZM14.3125 4.8125C14.8438 5.78125 15.125 6.84375 15.125 8C15.125 10.4688 13.8125 12.5938 11.8125 13.75L13.8438 7.875C14.25 6.9375 14.375 6.1875 14.375 5.5C14.375 5.25 14.3438 5.03125 14.3125 4.8125ZM16.25 8C16.25 3.75 12.75 0.25 8.5 0.25C4.21875 0.25 0.75 3.75 0.75 8C0.75 12.2812 4.21875 15.75 8.5 15.75C12.75 15.75 16.25 12.2812 16.25 8ZM15.875 8C15.875 12.0938 12.5625 15.4062 8.5 15.4062C4.40625 15.4062 1.09375 12.0938 1.09375 8C1.09375 3.9375 4.40625 0.625 8.5 0.625C12.5625 0.625 15.875 3.9375 15.875 8Z"
+                fill="#020617"
+              />
+            </svg>
+
+            Create a blank WordPress site
+          </button>
+        </div>
+      </div>
+    </div>
+    <script src="popup.js"></script>
   </body>
 </html>
