@@ -1,46 +1,54 @@
-# ZipWP Chrome Extension  
+# ZipWP Chrome Extension
 
-## Overview  
-The ZipWP Chrome Extension simplifies the process of creating test sites for ZipWP by providing quick-access buttons. With just a single click, you can either create a new blank site or a complete site using advanced options.  
+## Overview
 
-## Features  
-- **Create New Site**: Instantly navigate to `https://try.new/` to create a blank site.  
-- **Create New Site with Advanced Options**: Access the advanced site creation page at `https://app.zipwp.com/create-complete-site/type?source=zipwp&medium=firstfold`.  
+The ZipWP Chrome Extension provides quick access to ZipWP functionalities directly from your browser. With this extension, you can easily create new AI-generated or blank WordPress sites with just a click.
 
-## Installation  
-1. Download or clone the extension code to your local machine.  
-2. Open Chrome and navigate to `chrome://extensions/`.  
-3. Enable **Developer Mode** (toggle in the top right corner).  
-4. Click on **Load unpacked** and select the folder containing the extension files.  
-5. The ZipWP Chrome Extension will now be available in your browser toolbar.  
+## Features
 
-## Usage  
-1. Click on the ZipWP Extension icon in your browser toolbar.  
-2. Use the available buttons:  
-   - **Create New**: Opens `https://try.new/` in a new tab to create a blank site.  
-   - **Create New with Advanced Options**: Opens `https://app.zipwp.com/create-complete-site/type?source=zipwp&medium=firstfold` in a new tab for advanced site creation.  
+- **Create AI-Generated Sites**: Quickly create a complete site using AI.
+- **Create Blank Sites**: Start with a blank WordPress site.
+- **Access Cookies**: View cookies related to ZipWP.
+- **Local Storage Access**: View local storage items related to ZipWP.
 
-## Code Explanation  
-The main functionality of the extension is provided by the following script:  
+## Installation
 
-```javascript  
-document.addEventListener("DOMContentLoaded", function () {  
-	const createNewBtn = document.getElementById("create-new-btn");  
-	const createNewWithAdvancedBtn = document.getElementById("create-new-with-advanced-btn");  
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/yourusername/zipwp-extension.git
+   ```
+2. Open Chrome and navigate to `chrome://extensions/`.
+3. Enable "Developer mode" by toggling the switch in the top right corner.
+4. Click on "Load unpacked" and select the `ZipWp` directory from the cloned repository.
 
-	createNewBtn.addEventListener("click", function () {  
-		chrome.tabs.create({ url: "https://try.new/" });  
-	});  
+## Usage
 
-	createNewWithAdvancedBtn.addEventListener("click", function () {  
-		chrome.tabs.create({ url: "https://app.zipwp.com/create-complete-site/type?source=zipwp&medium=firstfold" });  
-	});  
-});  
-```
+1. Click on the ZipWP extension icon in the Chrome toolbar.
+2. Use the popup to create a new AI-generated site or a blank site.
+3. Visit the ZipWP app directly from the extension.
 
-## Notes  
-- Ensure the buttons `create-new-btn` and `create-new-with-advanced-btn` exist in your extension's popup HTML file.  
-- This extension does not store user data or require any special permissions beyond opening new tabs.  
+## Development
 
-## License  
-This project is open-source and available under the MIT License.  
+### Project Structure
+
+- `background.js`: Handles background tasks such as accessing cookies and local storage.
+- `popup.html`: The HTML file for the extension's popup interface.
+- `popup.js`: The JavaScript file for handling user interactions in the popup.
+- `manifest.json`: The configuration file for the Chrome extension.
+
+### Scripts
+
+- **Start Development**: Open the `ZipWp` directory in Chrome as an unpacked extension to start development.
+
+## Contributing
+
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature-branch`).
+3. Make your changes.
+4. Commit your changes (`git commit -m 'Add new feature'`).
+5. Push to the branch (`git push origin feature-branch`).
+6. Open a pull request.
+
+## License
+
+This project is licensed under the MIT License.
